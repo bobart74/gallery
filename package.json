@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/bobart74/gallery/issues"
   },
-  "homepage": "https://github.com/bobart74/gallery#readme"
+  "homepage": "https://github.com/bobart74/gallery#readme",
+  "dependencies": {
+    "vanilla-javascript": "^1.0.1"
+  }
 }
