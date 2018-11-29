@@ -1,8 +1,8 @@
-(function(){
+(function() {
 
     class Zoom {
-        
-        display(image) {
+
+        render(image) {
             const $zoom = document.querySelector('#zoom');
             if($zoom) {
                 $zoom.remove();
@@ -15,16 +15,15 @@
             $el.setAttribute('src', image);
 
             $div.append($el);
-             
+
             const $app = document.querySelector('#app');
             $app.append($div);
 
             //$el.classList.add('zoom');
             //document.body.append($el);
         }
-
     }
-    
+
     window.gallery = window.gallery || {};
     window.gallery.Zoom = Zoom;
 

@@ -1,17 +1,16 @@
 function setup() {
 
     const zoom = new gallery.Zoom();
-    const thumblist = new gallery.ThumbList();
+    const thumbList = new gallery.ThumbList();
 
-    gallery.db.photos.forEach(({thumb, image}) => {
-        const photo = new gallery.Thumb(thumb);
-        photo.render();
-
-        //photo.addEventListener ('click', () => {
-            zoom.display(image);
-        //});
+    thumbList.on('click:thumb', ({image}) => {
+        zoom.render(image);
     });
-    
+
+    gallery.PhotosService.fetchPhotos()
+        .then(({photos}) => {
+            thumbList.render(photos);
+        });
 }
 
 window.addEventListener('DOMContentLoaded', setup);

@@ -21,6 +21,7 @@
   "dependencies": {
     "eslint": "^5.9.0",
     "http-server": "^0.11.1",
+    "super-event-emitter": "^4.1.6",
     "vanilla-javascript": "^1.0.1"
   }
 }
