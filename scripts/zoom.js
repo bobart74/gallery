@@ -4,7 +4,7 @@
         
         display(image) {
             const $zoom = document.querySelector('.zoom');
-            if(zoom) {
+            if($zoom) {
                 $zoom.remove();
             }
 
