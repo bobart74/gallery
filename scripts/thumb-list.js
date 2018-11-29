@@ -11,6 +11,6 @@
     }
 
     window.gallery = window.gallery || {};
-    window.gallery.Thumb = Thumb;
+    window.gallery.ThumbList = ThumbList;
 
 })();
