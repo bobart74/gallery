@@ -1,4 +1,5 @@
-(function() {
+const {Thumb} = require('./thumb.component');
+const EventEmitter = require('super-event-emitter');
 
     class ThumbList {
         constructor() {
@@ -13,7 +14,7 @@
 
         render(photos) {
             photos.forEach(({thumb, image}) => {
-                const photo = new gallery.Thumb(thumb);
+                const photo = new Thumb(thumb);
                 photo.render();
 
                 photo.on('click', () => {
@@ -23,7 +24,6 @@
         }
     }
 
-    window.gallery = window.gallery || {};
-    window.gallery.ThumbList = ThumbList;
-
-})();
+    module.exports = {
+        ThumbList
+    };
