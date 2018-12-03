@@ -1,5 +1,3 @@
-(function() {
-
     class PhotosService {
         fetchPhotos() {
             return window.fetch('backend/db.json')
@@ -15,7 +13,6 @@
         }
     }
 
-    window.gallery = window.gallery || {};
-    window.gallery.PhotosService = new PhotosService();
-
-})();
+    module.exports = {
+        PhotosService: new PhotosService()
+    };
