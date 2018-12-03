@@ -1,6 +1,6 @@
-(function () {
+const EventEmitter = require('super-event-emitter');
 
-    class Thumb {
+class Thumb {
         constructor(url) {
             EventEmitter.mixin(this);
 
@@ -20,7 +20,6 @@
         }
     }
 
-    window.gallery = window.gallery || {};
-    window.gallery.Thumb = Thumb;
-
-})();
+    module.exports = {
+        Thumb
+    };

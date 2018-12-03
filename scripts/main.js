@@ -1,13 +1,20 @@
-function setup() {
+const {Zoom} = require('./components/zoom.component');
+const {ThumbList} = require('./components/thumb-list.component');
+const {PhotosService} = require('./services/photos.service');
+const {Title} = require('./components/title.component');
 
-    const zoom = new gallery.Zoom();
-    const thumbList = new gallery.ThumbList();
+function setup() {
+    const title = new Title();
+    title.render();
+
+    const zoom = new Zoom();
+    const thumbList = new ThumbList();
 
     thumbList.on('click:thumb', ({image}) => {
         zoom.render(image);
     });
 
-    gallery.PhotosService.fetchPhotosAsync()
+    PhotosService.fetchPhotosAsync()
         .then(({photos}) => {
             thumbList.render(photos);
         });
